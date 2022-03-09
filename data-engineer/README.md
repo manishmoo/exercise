@@ -8,34 +8,22 @@ The business wants to extend selling of products beyond Earth and wants to targe
 
 ## Ask
 
+Create a new data ingestion pipeline/job: 
+
 * ingest all “people” data from the Star Wars API - https://swapi.dev/documentation#people
     * the API provided unique id for each person should be preserved
     
-* Data should land into the business Data Warehouse:
+* Data should land into the Data Warehouse:
     * SQLite - https://docs.python.org/3/library/sqlite3.html
 
-* Your colleagues in the team have already defined a schema for you to use, assume this table has not been created:
+* This would be an ongoing daily ingestion because:
 
-```sql
-CREATE TABLE swapi_people(
-   id         INTEGER NOT NULL PRIMARY KEY,
-   name       TEXT 	  NOT NULL,
-   height     TEXT 	  NOT NULL,
-   mass       TEXT 	  NOT NULL,
-   hair_color TEXT 	  NOT NULL,
-   skin_color TEXT 	  NOT NULL,
-   eye_color  TEXT 	  NOT NULL,
-   birth_year TEXT 	  NOT NULL,
-   gender     TEXT 	  NOT NULL,
-   created    TEXT 	  NOT NULL, -- lets not worry about parsing the timestamp
-   edited     TEXT 	  NOT NULL  -- lets not worry about parsing the timestamp
-);
-```
+   1. capture new people that are born in the Star Wars universe
+   1. capture existing people who may have decided to change their hair colour, etc
 
-This would be an ongoing daily ingestion because:
+* Your colleagues in the team have [already defined a database table schema](./gists.md#sql-statements) for you to use
+    * creation/maintenance of this table should be handled by this ingestion pipeline/job
 
-1. capture new people that are born in the Star Wars universe
-2. capture existing people who may have decided to change their hair colour
 
 ### Considerations for:
 
