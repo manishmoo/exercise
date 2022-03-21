@@ -8,26 +8,25 @@ The business wants to extend selling of products beyond Earth and wants to targe
 
 ## Ask
 
-Create a new data ingestion pipeline/job: 
+Create a new daily data ingestion pipeline/job in Python 3.10 to keep upto date with all the people in the Star Wars universe: 
 
-* ingest all “people” data from the Star Wars API - https://swapi.dev/documentation#people
-    * the API provided unique id for each person should be preserved
+1. Ingest all “people” data from the Star Wars API - https://swapi.dev/
+    * the API provided unique "people id" for each person should be captured
     
-* Data should land into the Data Warehouse:
+1. People data should land into the Data Warehouse:
     * SQLite - https://docs.python.org/3/library/sqlite3.html
 
-* This would be an ongoing daily ingestion because:
-
-   1. capture new people that are born in the Star Wars universe
-   1. capture existing people who may have decided to change their hair colour, etc
-
-* Your colleagues in the team have [already defined a database table schema](./gists.md#sql-statements) for you to use
+1. Your colleagues in the team have [already defined a database table schema](./gists.md#sql-statements) for you to use
     * creation/maintenance of this table should be handled by this ingestion pipeline/job
+
+1. Capture any changes to existing people in the universe
+    * E.g. if C3PO decides to go blonde, the existing record in the Warehouse should reflect this
+
 
 
 ### Considerations for:
 
-* testing
+* testing (please include at least 1 test)
 * robustness
 * scalability
 * deployment
