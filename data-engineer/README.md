@@ -3,17 +3,17 @@
 
 ## Context
 
-The business wants to extend selling of products beyond Earth and wants to target the wider galaxy. To better understand the target audience, the business has requested analysing the target customer profiles available from the Star Wars API.
+The business wants to extend selling of products beyond Earth and wants to target the wider galaxy. To better understand the target audience, the business wants to start looking into intergalactic customer profiles available from the Star Wars API.
 
 
 ## Ask
 
-Create a new daily data ingestion pipeline/job in Python 3.10 to keep upto date with all the people in the Star Wars universe: 
+Create a new daily data ingestion pipeline/job in `Python 3.10` to keep upto date with all the people in the Star Wars universe: 
 
-1. Ingest all “people” data from the Star Wars API - https://swapi.dev/
+1. Ingest all `people` data from the Star Wars API - https://swapi.dev/
     * the API provided unique "people id" for each person should be captured
     
-1. People data should land into the Data Warehouse:
+1. The `people` data should land into the Data Warehouse:
     * SQLite - https://docs.python.org/3/library/sqlite3.html
 
 1. Your colleagues in the team have [already defined a database table schema](./gists.md#sql-statements) for you to use
@@ -29,4 +29,5 @@ Create a new daily data ingestion pipeline/job in Python 3.10 to keep upto date 
 * testing (please include at least 1 test)
 * robustness
 * scalability
+* readability
 * deployment
